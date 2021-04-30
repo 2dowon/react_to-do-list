@@ -1,0 +1,42 @@
+.todayInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todayInfoLeft {
+  display: flex;
+  align-items: center;
+}
+
+.monthYear {
+  display: block;
+}
+
+.date {
+  font-size: 40px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.month,
+.year {
+  font-size: 15px;
+  color: rgb(54, 54, 54);
+}
+
+.day {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(54, 54, 54);
+  display: flex;
+  align-items: center;
+}
+
+.todayCount {
+  display: flex;
+  justify-content: space-between;
+  color: #0ba06e;
+  font-size: 40px;
+  font-weight: 900;
+  margin: 30px 0;
+}
