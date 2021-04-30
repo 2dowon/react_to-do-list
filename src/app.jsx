@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import styles from "./app.module.css";
 import "./reset.css";
 import "./normalize.css";
@@ -13,7 +13,7 @@ function App() {
     { id: 3, name: "Coding", check: false },
   ]);
 
-  const handleCheck = (todo) => {
+  const handleCheck = useCallback((todo) => {
     setTodos((todos) =>
       todos.map((item) => {
         if (item.id === todo.id) {
@@ -22,15 +22,15 @@ function App() {
         return item;
       })
     );
-  };
+  }, []);
 
-  const handleDelete = (todo) => {
+  const handleDelete = useCallback((todo) => {
     setTodos((todos) => todos.filter((item) => item.id !== todo.id));
-  };
+  }, []);
 
-  const handleAdd = (name) => {
+  const handleAdd = useCallback((name) => {
     setTodos((todos) => [...todos, { id: Date.now(), name, check: false }]);
-  };
+  }, []);
 
   return (
     <div className={styles.app}>

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo, useRef } from "react";
 import styles from "./addForm.module.css";
 
-const AddForm = ({ onAdd }) => {
-  const inputRef = React.createRef();
+const AddForm = memo(({ onAdd }) => {
+  const inputRef = useRef();
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -24,6 +24,6 @@ const AddForm = ({ onAdd }) => {
       />
     </form>
   );
-};
+});
 
 export default AddForm;

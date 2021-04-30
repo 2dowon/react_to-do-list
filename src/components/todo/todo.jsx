@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./todo.module.css";
 
-const Todo = ({ todo, onDelete, onCheck }) => {
+const Todo = memo(({ todo, onDelete, onCheck }) => {
   const checkType = todo.check === true ? styles.done : styles.yet;
 
   const handleDelete = () => {
@@ -29,6 +29,6 @@ const Todo = ({ todo, onDelete, onCheck }) => {
       </div>
     </li>
   );
-};
+});
 
 export default Todo;

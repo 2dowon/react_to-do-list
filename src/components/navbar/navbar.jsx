@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./navbar.module.css";
 
-const Navbar = ({ totalCount }) => {
+const Navbar = memo(({ totalCount }) => {
   const today = new Date();
   const date = today.getDate();
   const year = today.getFullYear();
@@ -51,6 +51,6 @@ const Navbar = ({ totalCount }) => {
       </div>
     </nav>
   );
-};
+});
 
 export default Navbar;
