@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "./app.module.css";
 import "./reset.css";
 import "./normalize.css";
@@ -7,11 +7,18 @@ import Navbar from "./components/navbar/navbar";
 import AddForm from "./components/addForm/addForm";
 
 function App() {
-  const [todos, setTodos] = useState([
-    { id: 1, name: "Reading", check: false },
-    { id: 2, name: "Running", check: false },
-    { id: 3, name: "Coding", check: false },
-  ]);
+  const TODOS_LS = "todos";
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem(TODOS_LS)) || []
+  );
+
+  const saveTodos = () => {
+    localStorage.setItem(TODOS_LS, JSON.stringify(todos));
+  };
+
+  useEffect(() => {
+    saveTodos();
+  });
 
   const handleCheck = useCallback((todo) => {
     setTodos((todos) =>
