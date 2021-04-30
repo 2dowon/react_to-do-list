@@ -1,9 +1,12 @@
 .todo {
   list-style: none;
-  padding: 10px;
+  padding: 10px 0;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
+
 .yet {
   color: black;
 }
@@ -17,16 +20,20 @@
   margin-right: 20px;
 }
 
+.btns {
+  display: flex;
+  align-items: center;
+}
+
 .btnDelete {
   font-size: 22px;
 }
 
 .btnCheck {
-  font-size: 18px;
   margin-right: 10px;
   width: 30px;
   height: 30px;
-  border: 3px solid #33ba7c;
+  border: 3px solid #2096f3;
   border-radius: 50%;
 }
 
@@ -34,12 +41,26 @@
   width: 30px;
   height: 30px;
   border: none;
-  background-image: url(../../assets/images/checked.png);
+  background-image: url(../../assets/images/check.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
 .btnDelete.done {
-  color: gray;
+  color: black;
+}
+
+@media screen and (max-width: 375px) {
+  .todoName {
+    font-size: 23px;
+  }
+  .btnCheck,
+  .btnCheck.done {
+    width: 22px;
+    height: 22px;
+  }
+  .btnDelete {
+    font-size: 18px;
+  }
 }

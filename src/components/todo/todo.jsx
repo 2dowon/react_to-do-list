@@ -13,18 +13,20 @@ const Todo = ({ todo, onDelete, onCheck }) => {
   };
 
   return (
-    <li className={`${styles.todo} ${checkType}`}>
+    <li className={`${styles.todo} ${checkType}`} onClick={handleCheck}>
       <span className={styles.todoName}>{todo.name}</span>
-      <button
-        className={`${styles.btnCheck} ${checkType}`}
-        onClick={handleCheck}
-      ></button>
-      <button
-        className={`${styles.btnDelete} ${checkType}`}
-        onClick={handleDelete}
-      >
-        <i className="fas fa-trash"></i>
-      </button>
+      <div className={styles.btns}>
+        <button
+          className={`${styles.btnCheck} ${checkType}`}
+          onClick={handleCheck}
+        ></button>
+        <button
+          className={`${styles.btnDelete} ${checkType}`}
+          onClick={handleDelete}
+        >
+          <i className="fas fa-trash"></i>
+        </button>
+      </div>
     </li>
   );
 };

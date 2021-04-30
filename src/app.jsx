@@ -3,6 +3,8 @@ import styles from "./app.module.css";
 import "./reset.css";
 import "./normalize.css";
 import Todos from "./components/todos/todos";
+import Navbar from "./components/navbar/navbar";
+import AddForm from "./components/addForm/addForm";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -26,9 +28,20 @@ function App() {
     setTodos((todos) => todos.filter((item) => item.id !== todo.id));
   };
 
+  const handleAdd = (name) => {
+    setTodos((todos) => [...todos, { id: Date.now(), name, check: false }]);
+  };
+
   return (
     <div className={styles.app}>
-      <Todos todos={todos} onDelete={handleDelete} onCheck={handleCheck} />
+      <Navbar totalCount={todos.length} className={styles.navbar} />
+      <Todos
+        todos={todos}
+        onDelete={handleDelete}
+        onCheck={handleCheck}
+        className={styles.todos}
+      />
+      <AddForm onAdd={handleAdd} className={styles.addForm} />
     </div>
   );
 }

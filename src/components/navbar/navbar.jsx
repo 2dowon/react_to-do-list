@@ -34,7 +34,7 @@ const Navbar = ({ totalCount }) => {
   let day = arrDays[today.getDay()];
 
   return (
-    <nav>
+    <nav className={styles.navbar}>
       <div className={styles.todayInfo}>
         <div className={styles.todayInfoLeft}>
           <span className={styles.date}>{date}</span>

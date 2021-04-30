@@ -1,3 +1,11 @@
+.navbar {
+  position: fixed;
+  top: 13vh;
+  width: 450px;
+  background-color: white;
+  padding-right: 10px;
+}
+
 .todayInfo {
   display: flex;
   justify-content: space-between;
@@ -35,8 +43,34 @@
 .todayCount {
   display: flex;
   justify-content: space-between;
-  color: #0ba06e;
+  color: #2096f3;
   font-size: 40px;
   font-weight: 900;
-  margin: 30px 0;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 375px) {
+  .navbar {
+    top: 0;
+    width: 88%;
+    margin-top: 30px;
+  }
+
+  .todayCount {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-height: 568px) {
+  .todayCount,
+  .date {
+    font-size: 30px;
+  }
+  .day {
+    font-size: 22px;
+  }
+  .month,
+  .year {
+    font-size: 10px;
+  }
 }

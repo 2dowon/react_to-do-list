@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 500px;
+  height: 80vh;
+  overflow: auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  -webkit-box-shadow: 6px 7px 5px 2px rgba(94, 94, 94, 0.72);
+  -moz-box-shadow: 6px 7px 5px 2px rgba(94, 94, 94, 0.72);
+  box-shadow: 6px 7px 5px 2px rgba(94, 94, 94, 0.72);
+}
+
+@media screen and (max-width: 375px) {
+  .app {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
